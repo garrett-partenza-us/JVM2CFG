@@ -1,0 +1,183 @@
+public class opcode {
+  static final boolean $assertionsDisabled;
+
+  public opcode();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: bipush        -5
+       2: istore_1
+       3: iload_1
+       4: bipush        33
+       6: if_icmpge     86
+       9: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      12: new           #3                  // class java/lang/StringBuilder
+      15: dup
+      16: invokespecial #4                  // Method java/lang/StringBuilder."<init>":()V
+      19: iload_1
+      20: invokevirtual #5                  // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+      23: ldc           #6                  // String :
+      25: invokevirtual #7                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      28: iload_1
+      29: invokestatic  #8                  // Method toBinary:(I)Ljava/lang/String;
+      32: invokevirtual #7                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      35: invokevirtual #9                  // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      38: invokevirtual #10                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+      41: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      44: iload_1
+      45: invokevirtual #11                 // Method java/io/PrintStream.println:(I)V
+      48: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+      51: new           #3                  // class java/lang/StringBuilder
+      54: dup
+      55: invokespecial #4                  // Method java/lang/StringBuilder."<init>":()V
+      58: iload_1
+      59: invokevirtual #5                  // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+      62: ldc           #6                  // String :
+      64: invokevirtual #7                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      67: iload_1
+      68: invokestatic  #12                 // Method java/lang/Integer.toBinaryString:(I)Ljava/lang/String;
+      71: invokevirtual #7                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      74: invokevirtual #9                  // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      77: invokevirtual #10                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+      80: iinc          1, 1
+      83: goto          3
+      86: return
+
+  public static java.lang.String toBinary(int);
+    Code:
+       0: iload_0
+       1: ifge          8
+       4: iconst_1
+       5: goto          9
+       8: iconst_0
+       9: istore_1
+      10: iload_0
+      11: invokestatic  #13                 // Method java/lang/Math.abs:(I)I
+      14: istore_0
+      15: ldc           #14                 // String
+      17: astore_2
+      18: iload_0
+      19: iconst_1
+      20: if_icmple     51
+      23: new           #3                  // class java/lang/StringBuilder
+      26: dup
+      27: invokespecial #4                  // Method java/lang/StringBuilder."<init>":()V
+      30: iload_0
+      31: iconst_2
+      32: irem
+      33: invokevirtual #5                  // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+      36: aload_2
+      37: invokevirtual #7                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      40: invokevirtual #9                  // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      43: astore_2
+      44: iload_0
+      45: iconst_2
+      46: idiv
+      47: istore_0
+      48: goto          18
+      51: getstatic     #15                 // Field $assertionsDisabled:Z
+      54: ifne          93
+      57: iload_0
+      58: ifeq          93
+      61: iload_0
+      62: iconst_1
+      63: if_icmpeq     93
+      66: new           #16                 // class java/lang/AssertionError
+      69: dup
+      70: new           #3                  // class java/lang/StringBuilder
+      73: dup
+      74: invokespecial #4                  // Method java/lang/StringBuilder."<init>":()V
+      77: ldc           #17                 // String value is not <= 1:
+      79: invokevirtual #7                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      82: iload_0
+      83: invokevirtual #5                  // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+      86: invokevirtual #9                  // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      89: invokespecial #18                 // Method java/lang/AssertionError."<init>":(Ljava/lang/Object;)V
+      92: athrow
+      93: new           #3                  // class java/lang/StringBuilder
+      96: dup
+      97: invokespecial #4                  // Method java/lang/StringBuilder."<init>":()V
+     100: iload_0
+     101: invokevirtual #5                  // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+     104: aload_2
+     105: invokevirtual #7                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     108: invokevirtual #9                  // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+     111: astore_2
+     112: getstatic     #15                 // Field $assertionsDisabled:Z
+     115: ifne          133
+     118: aload_2
+     119: invokestatic  #19                 // Method all0sAnd1s:(Ljava/lang/String;)Z
+     122: ifne          133
+     125: new           #16                 // class java/lang/AssertionError
+     128: dup
+     129: invokespecial #20                 // Method java/lang/AssertionError."<init>":()V
+     132: athrow
+     133: iload_1
+     134: ifeq          157
+     137: new           #3                  // class java/lang/StringBuilder
+     140: dup
+     141: invokespecial #4                  // Method java/lang/StringBuilder."<init>":()V
+     144: ldc           #21                 // String -
+     146: invokevirtual #7                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     149: aload_2
+     150: invokevirtual #7                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     153: invokevirtual #9                  // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+     156: astore_2
+     157: aload_2
+     158: areturn
+
+  public static boolean all0sAnd1s(java.lang.String);
+    Code:
+       0: getstatic     #15                 // Field $assertionsDisabled:Z
+       3: ifne          20
+       6: aload_0
+       7: ifnonnull     20
+      10: new           #16                 // class java/lang/AssertionError
+      13: dup
+      14: ldc           #22                 // String Failed precondition all0sAnd1s. parameter cannot be null
+      16: invokespecial #18                 // Method java/lang/AssertionError."<init>":(Ljava/lang/Object;)V
+      19: athrow
+      20: iconst_1
+      21: istore_1
+      22: iconst_0
+      23: istore_2
+      24: iload_1
+      25: ifeq          66
+      28: iload_2
+      29: aload_0
+      30: invokevirtual #23                 // Method java/lang/String.length:()I
+      33: if_icmpge     66
+      36: aload_0
+      37: iload_2
+      38: invokevirtual #24                 // Method java/lang/String.charAt:(I)C
+      41: istore_3
+      42: iload_3
+      43: bipush        48
+      45: if_icmpeq     54
+      48: iload_3
+      49: bipush        49
+      51: if_icmpne     58
+      54: iconst_1
+      55: goto          59
+      58: iconst_0
+      59: istore_1
+      60: iinc          2, 1
+      63: goto          24
+      66: iload_1
+      67: ireturn
+
+  static {};
+    Code:
+       0: ldc_w         #25                 // class opcode
+       3: invokevirtual #26                 // Method java/lang/Class.desiredAssertionStatus:()Z
+       6: ifne          13
+       9: iconst_1
+      10: goto          14
+      13: iconst_0
+      14: putstatic     #15                 // Field $assertionsDisabled:Z
+      17: return
+}
