@@ -264,7 +264,9 @@ def connect_methods3(methods):
     return final
     
     
-methods = get_opcodes('exampleOpcodes.txt')
+text_file = 'exampleOpcodes.txt'
+
+methods = get_opcodes(text_file)
 
 print("completed getting opcodes")
 
